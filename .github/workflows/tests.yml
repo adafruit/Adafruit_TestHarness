@@ -8,7 +8,7 @@ jobs:
       - name: Check C++ formatting
         run: |
           python3 -m pip install clang-format==22.1.8
-          clang-format --dry-run --Werror include/*.h src/*.cpp tests/*.cpp
+          clang-format --dry-run --Werror include/*.h src/*.cpp tests/*.cpp fixtures/ublox/*.h
       - name: Run all host tests with sanitizers
         run: |
           python3 run_tests.py

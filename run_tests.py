@@ -10,8 +10,8 @@ import tempfile
 def run_tests(tests, sources=(), includes=()):
     """Build each test as a separate executable with the shared Arduino shim.
 
-    Tests must define main(). Supply peripheral fakes through includes; no
-    receiver, register, or bus behavior is built into the shared harness.
+    Tests must define main(). Select optional peripheral fixtures through
+    includes; the generic bus fakes use callbacks for device-specific behavior.
     """
     root = Path(__file__).resolve().parent
     tests = sorted(Path(test).resolve() for test in tests)
